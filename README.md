@@ -8,13 +8,13 @@ USAGE:  copy text files to calculator memory via USB. CG50 will automatically co
         
         start program "CLTHEORY" to access main menu
 
-
+*
 WHAT IS IT?
 
 Casio Basic Program to automate reocurring calculations:
 
 
-
+*
 Q'
 
 -local stiffness matrix Q' from material properties: CALC'
@@ -24,7 +24,7 @@ Q'
 -save Q' as a material for further operations: Q'SVE
 
 
-
+*
 QTRF
 
 -select saved material and enter ply angle
@@ -32,7 +32,7 @@ QTRF
 to give transformation matrix Tepsilon and transformed global stiffness matrix Q
 
 
-
+*
 ABD
 
 -define laminate (materials, ply angles, thicknesses): LAYERS
@@ -42,7 +42,7 @@ to calculate ABD matrix a fuckload faster than by typing all that bullshit into 
 (ABD is saved for further calculations)
 
 
-
+*
 STRAN (structural analysis)
 
 -calculate either:
@@ -57,7 +57,8 @@ STRAN (structural analysis)
 
 
 
-
+*
+*
 POST (Postprocessing menu)
 
    select:
@@ -69,7 +70,7 @@ POST (Postprocessing menu)
    -stresses from local strains: LOCSTRES
 
 
-
+*
    TO BE CODED:
    
    -reserve factors for given stresses and strenghts: RF
@@ -80,7 +81,9 @@ POST (Postprocessing menu)
 
 
 
-
+*
+*
+*
 Note that most stuff is written in german, some english when things had to be shorter. Maybe somebody could make a polished english version?
 
 The codes are deliberately split into small sections to be used in exams where this code might be used.
