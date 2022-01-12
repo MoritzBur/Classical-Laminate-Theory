@@ -1,5 +1,8 @@
 # Classical-Laminate-Theory
 
+https://user-images.githubusercontent.com/40000888/149094070-ce522289-de91-486b-ae18-aacb72d040c5.mp4
+
+
 COMPATIBILITY: coded o CASIO fx-CG50. No other devices tested yet
 
 USAGE:  copy text files to calculator memory via USB. CG50 will automatically convert int usable program files after disconnecting from USB
