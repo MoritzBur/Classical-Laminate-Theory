@@ -4,7 +4,7 @@ COMPATIBILITY: coded o CASIO fx-CG50. No other devices tested yet
 
 USAGE:  copy text files to calculator memory via USB. CG50 will automatically convert int usable program files after disconnecting from USB
 
-        run INITCLT to initialize all necessary matrices with their respective dimensions
+        start INITCLT to initialize all necessary matrices with their respective dimensions
         
         start program "CLTHEORY" to access main menu
 
