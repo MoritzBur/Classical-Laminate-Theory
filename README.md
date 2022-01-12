@@ -14,6 +14,7 @@ WHAT IS IT?
 Casio Basic Program to automate reocurring calculations:
 
 
+
 Q'
 
 -local stiffness matrix Q' from material properties: CALC'
@@ -23,11 +24,13 @@ Q'
 -save Q' as a material for further operations: Q'SVE
 
 
+
 QTRF
 
 -select saved material and enter ply angle
 
 to give transformation matrix Tepsilon and transformed global stiffness matrix Q
+
 
 
 ABD
@@ -37,6 +40,7 @@ ABD
 to calculate ABD matrix a fuckload faster than by typing all that bullshit into a potatocalculator: CALCABD
 
 (ABD is saved for further calculations)
+
 
 
 STRAN (structural analysis)
@@ -63,6 +67,8 @@ POST (Postprocessing menu)
    -transformation of strains to local coordinate system epsilonk'(epsilonk,alphak): STRALOC
    
    -stresses from local strains: LOCSTRES
+
+
 
    TO BE CODED:
    
