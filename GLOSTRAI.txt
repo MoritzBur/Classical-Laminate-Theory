@@ -1,0 +1,57 @@
+'ProgramMode:RUN
+ClrText
+{3,1}->Dim Mat J
+{3,1}->Dim Mat K
+'Dehnung in best. Schicht bei zK berechnen
+Lbl A
+
+ClrText
+Menu "_#E644__#E5CD_gespeichert?","Ja",1,"Nein",2,"check",3
+
+Lbl 2
+'epsilon in Mat I speichern
+
+Lbl 2
+"_#E644_x0[]="?->Mat I[1,1]
+"_#E644_y0[]="?->Mat I[2,1]
+"_#E642_xy0[]="?->Mat I[3,1]
+"_#E649_x[1//mm]="?->Mat I[4,1]
+"_#E649_y[1//mm]="?->Mat I[5,1]
+"_#E649_xy[1//mm]="?->Mat I[6,1]
+
+ClrText
+"Dehnvektor best_#E61C_ckt"
+"_#E644__#E5CD__->_ Mat I"
+"zeige Dehnvektor _#E644__#E5CD_"Disps
+Lbl 3
+Mat IDispsGoto A
+
+Lbl 1
+'gebe z-Koordinaten an
+ClrText
+"definiere Schichtgrenzen:"
+"z_@E76B_[mm]="?->T
+"z_@E76B__#E5DB__#E5CE_[mm]="?->U
+
+'###berechne eK+,-
+Mat I[1,1]-T*Mat I[4,1]->Mat J[1,1]
+Mat I[2,1]-T*Mat I[5,1]->Mat J[2,1]
+Mat I[3,1]-T*Mat I[6,1]->Mat J[3,1]
+Mat I[1,1]-U*Mat I[4,1]->Mat K[1,1]
+Mat I[2,1]-U*Mat I[5,1]->Mat K[2,1]
+Mat I[3,1]-U*Mat I[6,1]->Mat K[3,1]
+
+ClrText
+"_#E644__@E76B__#E5DC_,_#E644__@E76B__#E5DB_ berechnet."
+"_#E644__@E76B__#E5DC_ _->_ Mat J"
+"_#E644__@E76B__#E5DB_ _->_ Mat K"
+"zeige _#E644__@E76B__#E5DC_:"Disps
+Mat JDisps"zeige _#E644__@E76B__#E5DB_:"Disps
+Mat KDisps
+'###Endmen_#E61C_
+Menu "wat nu?","TRF _#E644__@E76B__->__#E644_'_@E76B_",U,"weitere _#E644__@E76B_",A,"beenden",W
+
+Lbl U
+Prog "STRALOC"
+
+Lbl W

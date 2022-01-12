@@ -1,0 +1,71 @@
+'ProgramMode:RUN
+{3,3}->Dim Mat X
+{3,3}->Dim Mat Y
+{3,3}->Dim Mat Z
+{6,6}->Dim Mat W
+
+ClrText
+"ABD-Matrix aus"
+"Q_@E76B_,Lagenaufbau,t_@E769_"
+"_#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594_"
+'Vorauss.LAYERS,Q
+
+For 1->I To R
+
+'###set Material
+Mat N[I,1]->S
+
+'###set Winkel
+Mat N[I,2]->Q
+'###set z-Koord.
+Mat N[I,3]->T
+'###set z_@E76B__#E5DB__#E5CE_-Koord.
+Mat N[I+1,3]->U
+
+Prog "SILENTQ"
+'(speichert Qtrf f_#E61C_r _#E640__@E752_in Mat L,still)
+
+'###Berechne A(k)
+Mat L*((Mat N[I+1,3]-Mat N[I,3])->Mat A
+Mat A+Mat X->Mat X
+
+'###Berechne B(k)
+-(Mat L*0.5*(Mat N[I+1,3]^2-Mat N[I,3]^2))->Mat A
+Mat A+Mat Y->Mat Y
+
+'###Berechne D(k)
+Mat L*(1frac3)*(Mat N[I+1,3]^3-Mat N[I,3]^3)->Mat A
+Mat A+Mat Z->Mat Z
+
+Next
+
+
+'###ABD from A,B,D
+'###A-Mat_->_ABD
+For 1->I To 3
+For 1->J To 3
+Mat X[I,J]->Mat W[I,J]
+Next
+Next
+
+'###B-Mat_->_ABD
+Trn Mat Y->Mat A
+For 1->I To 3
+For 1->J To 3
+Mat Y[I,J]->Mat W[I,J+3]
+Mat A[I,J]->Mat W[I+3,J]
+Next
+Next
+
+'###D-Mat_->_ABD
+For 1->I To 3
+For 1->J To 3
+Mat Z[I,J]->Mat W[I+3,J+3]
+Next
+Next
+
+ClrText
+"ABD-Matrix berechnet"
+"ABD-Mat _->_ Mat W"
+"zeige ABD-Matrix:"DispsMat WDisps
+"END ABD"

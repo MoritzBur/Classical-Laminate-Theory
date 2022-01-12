@@ -1,0 +1,33 @@
+'ProgramMode:RUN
+ClrText
+'berechne Dehnvektor aus Lastvektor
+
+Lbl 2
+ClrText
+"Nx[N//mm]="?->Mat F[1,1]
+"Ny[N//mm]="?->Mat F[2,1]
+"Nxy[N//mm]="?->Mat F[3,1]
+"Mx[Nmm//mm]="?->Mat F[4,1]
+"My[Nmm//mm]="?->Mat F[5,1]
+"Mxy[Nmm//mm]="?->Mat F[6,1]
+
+"Lastvektor best_#E61C_ckt"
+"zeige Lastvektor NM:"Disps
+Lbl 3
+Mat FDisps
+Menu "Lastvektor korrekt?","Ja",1,"Nein",2,"check",3
+
+Lbl 1
+
+'berechne Dehnvektor
+
+(Mat W)^(-1)*Mat F->Mat I
+
+ClrText
+"Dehnvektor berechnet."
+"_#E644_0= ABD^(-1)*NM"
+"_#E644_0 _->_ Mat I"
+"zeige Dehnvektor"Disps
+
+Mat IDisps
+"END STRAINS"

@@ -1,0 +1,29 @@
+'ProgramMode:RUN
+ClrText
+{3,3}->Dim Mat A
+Lbl 2
+ClrText
+"Q' definieren"
+"Eingabe der Mat.elem."
+"_#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594_"
+
+"Q'11="?->Mat A[1,1]
+"Q'12="?->Mat A[1,2]
+"Q'13="?->Mat A[1,3]
+"Q'21="?->Mat A[2,1]
+"Q'22="?->Mat A[2,2]
+"Q'23="?->Mat A[2,3]
+"Q'31="?->Mat A[3,1]
+"Q'32="?->Mat A[3,2]
+"Q'33="?->Mat A[3,3]
+
+ClrText
+"Q_->_Mat A"
+"zeige Q':"DispsLbl 3
+Mat ADisps
+Menu "Eingabe ok?","Ja",1,"Nein",2,"check",3
+Lbl 1
+
+Prog "Q'SVE"
+
+"END SETQ"

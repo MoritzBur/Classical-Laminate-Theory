@@ -1,0 +1,32 @@
+'ProgramMode:RUN
+ClrText
+'berechne _#E644_ oder NM
+
+'init Mat I
+{6,1}->Dim Mat I
+'init Mat F
+{6,1}->Dim Mat F
+
+Lbl 5
+Menu "ABD gespeichert?","Ja",1,"Nein",2,"check",3
+
+Lbl 2
+ClrText
+"ABD extern definieren!"
+Goto 4
+
+Lbl 3
+Mat WDispsGoto 5
+
+Lbl 1
+
+Menu "was berechnen?","_#E644_0(NM)",A,"NM(_#E644_0)",B
+
+Lbl A
+Prog "STRAINS"
+Goto 4
+
+Lbl B
+Prog "LOAD"
+Lbl 4
+"END STAN"

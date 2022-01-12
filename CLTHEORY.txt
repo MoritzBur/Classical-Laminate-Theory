@@ -1,0 +1,27 @@
+'ProgramMode:RUN
+Lbl A
+Menu "Hauptmen_#E61C_","Q'",1,"Q",2,"ABD",3,"Strukturanalyse",4,"Postprocessing",5,"beenden",6
+
+Lbl 1
+Prog "Q'"
+Goto A
+
+Lbl 2
+Prog "QTRF"
+Goto A
+
+Lbl 3
+Prog "ABD"
+Goto A
+
+Lbl 4
+Prog "STRAN"
+Goto A
+
+Lbl 5
+Prog "POST"
+Goto A
+
+
+'########ENDE
+Lbl 6

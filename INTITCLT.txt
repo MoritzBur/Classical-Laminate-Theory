@@ -1,0 +1,33 @@
+'ProgramMode:RUN
+'###initialisiere Matrizen
+{3,3}->Dim Mat A
+{3,3}->Dim Mat B
+{3,3}->Dim Mat C
+{3,3}->Dim Mat D
+{3,3}->Dim Mat E
+{6,1}->Dim Mat F
+{3,1}->Dim Mat G
+{3,1}->Dim Mat H
+{6,1}->Dim Mat I
+{3,1}->Dim Mat J
+{3,1}->Dim Mat K
+{3,3}->Dim Mat L
+{3,3}->Dim Mat M
+{20,4}->Dim Mat N
+
+'{3,3}_->__Dim __Mat _O
+'{3,3}_->__Dim __Mat _P
+'{3,3}_->__Dim __Mat _Q
+'{3,3}_->__Dim __Mat _R
+'{3,3}_->__Dim __Mat _S
+'{3,3}_->__Dim __Mat _T
+'{3,3}_->__Dim __Mat _U
+'{3,3}_->__Dim __Mat _V
+
+{6,6}->Dim Mat W
+{3,3}->Dim Mat X
+{3,3}->Dim Mat Y
+{3,3}->Dim Mat Z
+
+"Alle Matrizen"
+"initialisiert"

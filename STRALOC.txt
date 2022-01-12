@@ -1,0 +1,62 @@
+'ProgramMode:RUN
+'###transformiere globale Dehnungen in lokale
+
+ClrText
+Menu "_#E644__@E76B__#E5DC_,_#E644__@E76B__#E5DB_saved?","Ja",C,"Nein",2
+Lbl 2
+ClrText
+{3,1}->Dim Mat J
+{3,1}->Dim Mat K
+"_#E644__@E76B__#E5DC_ _#E5CE__#E5CE_[]="?->Mat J[1,1]
+"_#E644__@E76B__#E5DC_ _#E5CF__#E5CE_[]="?->Mat J[2,1]
+"_#E644__@E76B__#E5DC_ _#E5D3__#E5CE_[]="?->Mat J[3,1]
+ClrText
+"_#E644__@E76B__#E5DB_ _#E5CE__#E5CE_[]="?->Mat K[1,1]
+"_#E644__@E76B__#E5DB_ _#E5CF__#E5CE_[]="?->Mat K[2,1]
+"_#E644__@E76B__#E5DB_ _#E5D3__#E5CE_[]="?->Mat K[3,1]
+
+Lbl C
+ClrText
+"MINUS"
+"zeige _#E644__@E76B__#E5DC_:"DispsMat JDispsClrText
+"PLUS"
+"zeige _#E644__@E76B__#E5DB_:"DispsMat KDisps
+Menu "Eingabe ok?","Ja",A,"Nein",2,"check",C
+
+Lbl A
+
+"_#E640__@E76B_[_deg_]="?->Q
+
+(cos Q)^<2>->Mat M[1,1]
+(sin Q)^<2>->Mat M[2,1]
+(cos Q)^<2>->Mat M[2,2]
+(sin Q)^<2>->Mat M[1,2]
+(sin Q)(cos Q)->Mat M[1,3]
+-(sin Q)(cos Q)->Mat M[2,3]
+-2(sin Q)(cos Q)->Mat M[3,1]
+2(sin Q)(cos Q)->Mat M[3,2]
+(cos Q)^<2>-(sin Q)^<2>->Mat M[3,3]
+""
+"Trf.mat. T_#E644_ gef_#E61C_llt."
+"T_#E644_ _->_ Mat M"
+"zeige T_#E644_:"DispsMat MDisps
+'###berechne lok. Dehnungen
+
+Mat M*Mat J->Mat J
+Mat M*Mat K->Mat K
+
+"_#E644__@E76B_'_#E5DC_,_#E644__@E76B_'_#E5DB_ berechnet."
+"_#E644__@E76B_'_#E5DC_ _->_ Mat J"
+"_#E644__@E76B_'_#E5DB_ _->_ Mat K"
+"zeige _#E644__@E76B_'_#E5DC_:"Disps
+Mat JDisps"zeige _#E644__@E76B_'_#E5DB_:"Disps
+Mat KDisps
+
+Menu "wat nu?","_#E651__@E76B_' berechnen",K,"TRF weitere _#E644__@E76B_",2,"beenden",M
+
+Lbl K
+'sigma loc berechnen
+Prog "LOCSTRSS"
+
+'Prog Ende
+Lbl M

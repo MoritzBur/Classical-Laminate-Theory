@@ -1,0 +1,19 @@
+'ProgramMode:RUN
+"ABD-Matrix aus"
+"Q'_@E769_,Lagenaufbau,t_@E769_"
+"_#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594_"
+
+Menu "Q'_@E769_ gespeichert?","Ja",1,"Nein",2
+
+Lbl 2
+Prog "Q'"
+Lbl 1
+
+
+'###################
+'LAMINATDEFINITION
+ClrText
+Prog "LAYERS"
+
+Prog "ABD"
+

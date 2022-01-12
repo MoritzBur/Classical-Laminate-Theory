@@ -1,0 +1,29 @@
+'ProgramMode:RUN
+ClrText
+Menu "Mat.daten speichern?","Ja",4,"Nein",5
+Lbl 4
+Menu "Mat.index zuweisen","Material 1",B,"Material 2",C,"Material 3",D,"Material 4",E
+
+
+Lbl B
+Mat A->Mat B
+"Q' _->_ Material 1"
+Goto 5
+
+Lbl C
+Mat A->Mat C
+"Q' _->_ Material 2"
+Goto 5
+
+Lbl D
+
+Mat A->Mat D
+"Q' _->_ Material 3"
+Goto 5
+
+Lbl E
+Mat A->Mat E
+"Q' _->_ Material 4"
+Lbl 5
+
+"END Q'SVE"

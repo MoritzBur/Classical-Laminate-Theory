@@ -1,0 +1,54 @@
+'ProgramMode:RUN
+ClrText
+{3,3}->Dim Mat A
+"lok. Steifigk.mat."
+"aus UD-Kennwerten"
+"_#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594_"DispsLbl 2
+'###EINGABE PARAMETER
+"E1="?->M
+"E2="?->N
+"G12"?->P
+"_#E64C_12"?->O
+
+Lbl 3
+ClrText
+Locate 1,2,"Input:"
+Locate 8,4,M
+Locate 3,4," E1="
+Locate 18,4,"MPa"
+Locate 8,5,N
+Locate 3,5," E2="
+Locate 18,5,"MPa"
+Locate 8,6,P
+Locate 3,6,"G12="
+Locate 18,6,"MPa"
+Locate 8,7,O
+Locate 3,7,"_#E64C_12="
+Locate 18,7,"[]"Disps
+ClrText
+Menu "Werte ok?","Ja",1,"Nein (Neueingabe)",2,"check",3
+Lbl 1
+
+'###BERECHNUNG WERTE
+Mfrac(1-O^<2>*NfracM)->Mat A[1,1]
+
+Nfrac(1-O^<2>*NfracM)->Mat A[2,2]
+
+O*Mat A[2,2]->Mat A[1,2]
+
+O*Mat A[2,2]->Mat A[2,1]
+
+P->Mat A[3,3]
+
+0->Mat A[3,1]
+0->Mat A[3,2]
+0->Mat A[1,3]
+0->Mat A[2,3]
+
+"Q' besetzt _->_ Mat A"
+"zeige Q'an:"Disps
+Lbl 6
+Mat ADisps
+Prog "Q'SVE"
+
+"END CALCQ'"

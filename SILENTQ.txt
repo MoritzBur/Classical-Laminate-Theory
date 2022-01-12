@@ -1,0 +1,37 @@
+'ProgramMode:RUN
+ClrText
+{3,3}->Dim Mat L
+{3,3}->Dim Mat M
+{3,3}->Dim Mat A
+
+
+(cos Q)^<2>->Mat M[1,1]
+(sin Q)^<2>->Mat M[2,1]
+(cos Q)^<2>->Mat M[2,2]
+(sin Q)^<2>->Mat M[1,2]
+(sin Q)(cos Q)->Mat M[1,3]
+-(sin Q)(cos Q)->Mat M[2,3]
+-2(sin Q)(cos Q)->Mat M[3,1]
+2(sin Q)(cos Q)->Mat M[3,2]
+(cos Q)^<2>-(sin Q)^<2>->Mat M[3,3]
+
+
+'###Q'_->_Mat A:
+If S=1
+Then Mat B->Mat A
+IfEnd
+
+If S=2
+Then Mat C->Mat A
+IfEnd
+
+If S=3
+Then Mat D->Mat A
+IfEnd
+
+If S=4
+Then Mat E->Mat A
+IfEnd
+
+'###Berechne Q_->_Mat L
+(Trn Mat M*Mat A)*Mat M->Mat L

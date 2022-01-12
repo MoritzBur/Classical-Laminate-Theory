@@ -1,0 +1,126 @@
+'ProgramMode:RUN
+ClrText
+'berechne lokale Spannungen aus epsilonK+-
+Lbl 8
+Menu "_#E644__@E76B_'_#E5DC_,_#E5DB_ saved?","Ja",1,"Nein",2,"check",3
+
+Lbl 2
+'###gebe epsilonK'-,+ manuell an
+{3,1}->Dim Mat J
+{3,1}->Dim Mat K
+"_#E644__@E76B_'_#E5DC_ _#E5CE__#E5CE_[]="?->Mat J[1,1]
+"_#E644__@E76B_'_#E5DC_ _#E5CF__#E5CE_[]="?->Mat J[2,1]
+"_#E644__@E76B_'_#E5DC_ _#E5D3__#E5CE_[]="?->Mat J[3,1]
+ClrText
+"_#E644__@E76B_'_#E5DB_ _#E5CE__#E5CE_[]="?->Mat K[1,1]
+"_#E644__@E76B_'_#E5DB_ _#E5CF__#E5CE_[]="?->Mat K[2,1]
+"_#E644__@E76B_'_#E5DB_ _#E5D3__#E5CE_[]="?->Mat K[3,1]
+
+
+Lbl 3
+'###Kontrolle
+ClrText
+"MINUS"
+"zeige _#E644__@E76B_'_#E5DC_:"DispsMat JDispsClrText
+"PLUS"
+"zeige _#E644__@E76B_'_#E5DB_:"DispsMat KDisps
+Menu "Eingabe ok?","Ja",1,"Nein",2,"check",3
+
+Lbl 1
+
+Menu "Material saved?","Ja",X,"Nein",Y,"check",Z
+
+
+Lbl Y
+Prog "Q'"
+Goto 1
+
+Lbl Z
+Menu "Mat.speicher","Material 1",B,"Material 2",C,"Material 3",D,"Material 4",E
+
+
+Lbl B
+If Mat B[1,1]=0
+Then "Speicher 1 leer"Disps
+Goto 1
+IfEnd
+
+Mat BDisps
+Goto 1
+
+Lbl C
+If Mat C[1,1]=0
+Then "Speicher 2 leer"Disps
+Goto 1
+IfEnd
+
+Mat CDisps
+Goto 1
+
+Lbl D
+If Mat D[1,1]=0
+Then "Speicher 3 leer"Disps
+Goto 1
+IfEnd
+
+Mat DDisps
+Goto 1
+
+Lbl E
+If Mat E[1,1]=0
+Then "Speicher 4 leer"Disps
+Goto 1
+IfEnd
+
+Mat EDisps
+Goto 1
+
+
+Lbl X
+
+Menu "Mat. ausw_#E605_hlen","Material 1",K,"Material 2",L,"Material 3",M,"Material 4",N
+
+
+Lbl K
+Mat B->Mat A
+"Q' ist Material 1"Disps
+Goto 5
+
+Lbl L
+Mat C->Mat A
+"Q' ist Material 2"Disps
+Goto 5
+
+Lbl M
+Mat D->Mat A
+"Q' ist Material 3"Disps
+Goto 5
+
+Lbl N
+Mat E->Mat A
+"Q' ist Material 4"Disps
+Lbl 5
+'###zeige Q'
+"nutze folgende Q':"DispsMat ADisps
+'###berechne sigma'
+Mat A*Mat J->Mat G
+Mat A*Mat K->Mat H
+
+ClrText
+"_#E651__@E76B_'berechnet"
+"_#E651__@E76B_=T_#E644_*_#E644__@E76B_"
+"_#E651__@E76B_'_#E5DC_ _->_ Mat G"
+"_#E651__@E76B_'_#E5DB_ _->_ Mat H"Disps
+ClrText
+"zeige _#E651__@E76B_'_#E5DC_:"Disps
+Mat GDisps
+"zeige _#E651__@E76B_'_#E5DB_"Disps
+Mat HDisps
+Menu "wat nu?","RF berechnen",7,"weitere sigma'",8,"beenden",9
+
+Lbl 7
+'###Reservefaktor berechnen
+
+Prog "RF"
+
+Lbl 9

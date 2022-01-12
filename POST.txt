@@ -1,0 +1,25 @@
+'ProgramMode:RUN
+ClrText
+'Hauptmen_#E61C_ Postprocessing
+Lbl A
+Menu "Postprocessing","Dehnung _#E644_(z_@E76B_)",1,"Drehung zu _#E644_'",2,"Spannung _#E651_'",3,"RF",4,"beenden",5
+
+Lbl 1
+Prog "GLOSTRAI"
+Goto A
+
+Lbl 2
+Prog "STRALOC"
+Goto A
+
+Lbl 3
+Prog "LOCSTRES"
+Goto A
+
+Lbl 4
+Prog "RF"
+Goto A
+
+
+'Programmende
+Lbl 5
