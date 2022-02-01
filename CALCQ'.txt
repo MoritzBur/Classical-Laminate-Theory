@@ -5,10 +5,10 @@ ClrText
 "aus UD-Kennwerten"
 "_#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594_"DispsLbl 2
 '###EINGABE PARAMETER
-"E1="?->M
-"E2="?->N
-"G12"?->P
-"_#E64C_12"?->O
+"E1[MPa]="?->M
+"E2[MPa]="?->N
+"G12[MPa]="?->P
+"_#E64C_12[]="?->O
 
 Lbl 3
 ClrText

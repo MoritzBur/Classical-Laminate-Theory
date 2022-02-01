@@ -1,5 +1,33 @@
 'ProgramMode:RUN
 ClrText
+'###ABD from A,B,D
+'###A-Mat_->_ABD
+For 1->I To 3
+For 1->J To 3
+Mat X[I,J]->Mat W[I,J]
+Next
+Next
+
+'###B-Mat_->_ABD
+Trn Mat Y->Mat A
+For 1->I To 3
+For 1->J To 3
+Mat Y[I,J]->Mat W[I,J+3]
+Mat A[I,J]->Mat W[I+3,J]
+Next
+Next
+
+'###D-Mat_->_ABD
+For 1->I To 3
+For 1->J To 3
+Mat Z[I,J]->Mat W[I+3,J+3]
+Next
+Next
+ClrText
+"Hinweis"
+"ABD aktualisiert"Disps
+
+ClrText
 'berechne _#E644_ oder NM
 
 'init Mat I
@@ -12,7 +40,7 @@ Menu "ABD gespeichert?","Ja",1,"Nein",2,"check",3
 
 Lbl 2
 ClrText
-"ABD extern definieren!"
+"ABD extern definieren!"Disps
 Goto 4
 
 Lbl 3

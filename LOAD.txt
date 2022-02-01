@@ -16,7 +16,7 @@ ClrText
 "Dehnvektor best_#E61C_ckt"
 "zeige Dehnvektor _#E644_0:"DispsLbl 3
 Mat IDisps
-Menu "Dehnvektor korrekt?","Ja",1,"Nein",2"check",3
+Menu "Dehnvektor korrekt?","Ja",1,"Nein",2,"check",3
 Lbl 1
 
 'berechne Lastvektor
