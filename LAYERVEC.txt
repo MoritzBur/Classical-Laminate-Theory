@@ -1,0 +1,77 @@
+'ProgramMode:RUN
+ClrText
+{20,4}->Dim Mat N
+"Lagenaufbau"
+"definiere Laminat"
+"_#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594__#E594_"
+Lbl 4
+"Anzahl Lagen="?->R
+
+"MATERIALABFRAGE"
+For 1->I To R
+
+"Lage:"
+IDisps
+"Material Nr.:"?->Mat N[I,1]
+Next
+
+"WINKELABFRAGE"
+For 1->I To R
+
+"Lage:"
+IDisps
+"Lagewinkel[_deg_]:"?->Mat N[I,2]
+Next
+
+"Z-ABFRAGE"Disps
+For 1->I To R
+"Lage:"
+IDisps
+"z-Koordinate[mm]="?->Mat N[I,3]
+Next
+
+
+"z-Koord. au_#E61F_en [mm]="?->Mat N[I+1,3]
+
+Lbl 3
+For 1->I To R
+Mat N[I+1,3]-Mat N[I,3]->Mat N[I,4]
+Next
+
+ClrText
+"Laminat definiert"
+"Laminatdef. _->_Mat N"
+"Mat.Nr.| _#E640__@E76B_ | z | t"
+"zeige Laminatdef.:"Disps
+Mat NDisps
+Menu "Lam.def. korrekt?","Ja",1,"Nein",2,"check",3
+
+Lbl 2
+Menu "Korrektur:","Einzelkorrektur",5,"Alles neu angeben",4
+
+Lbl 5
+ClrText
+"Korrektur Schicht:"?->K
+
+Menu "_#E61C_berschreiben","Material",A,"Schichtwinkel",B,"z-Koordinate",C
+
+Lbl A
+ClrText
+"_#E61C_berschreibe Material"
+"f_#E61C_r Schicht:"
+KDisps"Mat.index"?->Mat N[K,1]
+Goto 3
+
+Lbl B
+"_#E61C_berschreibe Schichtwinkel f_#E61C_r Schicht:"
+KDisps"Schichtwinkel"?->Mat N[K,2]
+Goto 3
+
+Lbl C
+"_#E61C_berschreibe z-Koord.f_#E61C_r Schicht:"
+KDisps"z-Koord."?->Mat N[K,3]
+Goto 3
+
+Lbl 1
+
+"END LAYERVEC"

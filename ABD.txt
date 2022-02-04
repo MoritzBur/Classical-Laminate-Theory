@@ -14,7 +14,7 @@ Lbl 1
 '###################
 'LAMINATDEFINITION
 ClrText
-Prog "LAYERS"
+Prog "LAYERVEC"
 
 Prog "CALCABD"
 
