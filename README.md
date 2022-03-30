@@ -14,12 +14,14 @@ https://user-images.githubusercontent.com/40000888/149094070-ce522289-de91-486b-
 coded on CASIO fx-CG50. No other devices tested yet
 
 ### USAGE:
-* copy text files to calculator memory via USB. CG50 will automatically convert into usable program files after disconnecting from USB.
-* for further information see [CG50 users guide](https://support.casio.com/en/manual/004/fx-CG50_Soft_v360_EN.pdf) chapter 13.1
-* Go to the "Programs" menu on your calculator
-* start Program INITCLT to initialize all necessary matrices with their respective dimensions.      
-* start program "CLTHEORY" to access the main menu
-* enjoy
+#### first usage / installation
+   * copy text files to calculator memory via USB. CG50 will automatically convert into usable program files after disconnecting from USB.
+   * for further information see [CG50 users guide](https://support.casio.com/en/manual/004/fx-CG50_Soft_v360_EN.pdf) chapter 13.1
+   * Go to the "Programs" menu on your calculator
+    * start Program INITCLT to initialize all necessary matrices with their respective dimensions. (this step is only necessary before first use or if you "broke" the setup while doing matrix calculations manually)    
+#### normal usage      
+   * start program "CLTHEORY" to access the main menu
+   * enjoy
 
 
 # Overview
